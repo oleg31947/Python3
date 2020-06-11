@@ -1,0 +1,26 @@
+"""
+Creat a Amazon account page
+
+- Amazon sign:     $$(".a-icon.a-icon-logo")
+
+- CREATE ACCOUNT:  $$("h1.a-spacing-small") or $$(".a-box-inner .a-spacing-small")
+
+- YOUR NAME field: $$("#ap_customer_name")
+
+- EMAIL field:     $$("#ap_email")
+
+- PASSWORD:        $$("#ap_password")
+
+- ALERT "Passwords must be at least 6 characters":  $x(".// *[contains(text(),'Passwords must be at least 6 characters')]")[0]
+
+- RE-ENTER PASSWORD: $$("#ap_password_check")
+
+- CREAT YOUR AMAZON ACCOUNT: $$("#continue")
+
+- Conditions of Use: $$("a[href*='notification_condition_of_use?ie']")
+
+- Privacy Notice:    $$("a[href*='notification_privacy_notice?ie']")
+
+- Sign-in:           $$(".a-link-emphasis")
+
+"""
