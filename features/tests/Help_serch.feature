@@ -6,5 +6,5 @@ Feature: Help search
     Given Open Amazon Help page
     When Use Find more solutions field and search for Cancel order
     And Click Go
-    Then Verify that Cancel Items or Orders text is present
+    Then Check that Cancel Items or Orders text is present
 

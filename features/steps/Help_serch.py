@@ -14,10 +14,14 @@ def search_cancel(context, search_word):
     search = context.driver.find_element(*MORE_SOLUSHEN_FILD)
     search.clear()
     search.send_keys(search_word)
+
+
 @when("Click Go")
 def click(context):
     context.driver.find_element(*GO).click()
-@then("Verify that {necessary} text is present")
+
+
+@then("Check that {necessary} text is present")
 def text_present(context, necessary):
     text = context.driver.find_element(*HEADER).text
     assert necessary == text, f'We expect {necessary} but got {text}'

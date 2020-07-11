@@ -51,7 +51,27 @@ How would you test it? How would you handle edge cases?
 #     return b
 
 
-
-
 #
 # print(return_uniq_letter("googl"))
+
+# def return_uniq_letter(n: str):
+#     for i in n.lower():
+#         if n.count(i) == 1:
+#             return i
+#
+# print(return_uniq_letter("Google"))
+
+# 2 way
+def return_uniq_letter_2(n: str):
+    d = {}
+    for i in n.lower():
+        if i not in d:
+            d[i] = 1
+        else:
+            d[i] += 1
+    for k, v in d.items():
+        if v == 1:
+            return k
+
+
+print(return_uniq_letter_2("Googl"))
