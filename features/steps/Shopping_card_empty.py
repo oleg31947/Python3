@@ -27,6 +27,7 @@ def search_item(context, item):
     e.clear()
     e.send_keys(item)
     context.driver.find_element(*SEARCH_ICON).click()
+    # sleep(3)
 
 
 @when("Click on {item}")

@@ -14,6 +14,11 @@ def open_google(context):
     context.driver.get('https://www.google.com/')
 
 
+@given("Open Amazon {address} page")
+def open_amazon_page(context,address ):
+    context.app.product.open_amazon_page(address)
+
+
 @when('Input {search_word} into search field')
 def input_search(context, search_word):
     search = context.driver.find_element(*SEARCH_INPUT)
@@ -28,6 +33,11 @@ def click_search_icon(context):
     sleep(1)
 
 
+@when("Select {title} department")
+def select_department(contest, title):
+    contest.app.top_nav_menu.select_department(title)
+
+
 @then('Product results for {search_word} are shown')
 def verify_found_results_text(context, search_word):
     results_msg = context.driver.find_element(*RESULTS_FOUND_MESSAGE).text
@@ -39,3 +49,8 @@ def verify_first_result(context, search_word):
     first_result = context.driver.find_element(*RESULTS).text
     print('\n{}'.format(first_result))
     assert search_word in first_result, "Expected word '{}' in message, but got '{}'".format(search_word, first_result)
+
+
+@then("{selected_dep} department was selected")
+def verify_selected_department(context, selected_dep):
+    context.app.top_nav_menu.verify_selected_department(selected_dep)
